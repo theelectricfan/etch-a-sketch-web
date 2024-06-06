@@ -42,10 +42,10 @@ gridSizeButton.addEventListener("click", () => {
     let rows=101;
     let cols=101;
 	do {
-		rows = prompt("Enter number of rows (<100)");
+		rows = prompt("Enter number of rows (<=100)");
 	} while (rows > 100);
 	do {
-		cols = prompt("Enter number of columns (<100)");
+		cols = prompt("Enter number of columns (<=100)");
 	} while (cols > 100);
 	createGrid(rows, cols);
 });
