@@ -22,7 +22,16 @@ function createGrid(rows, cols) {
 createGrid(16, 16);
 function changeColour(e) {
 	if (e.target.classList.contains("square"))
-		e.target.style.backgroundColor = "black";
+    {
+        let redChannel = Math.floor(Math.random() * 256);
+        let greenChannel = Math.floor(Math.random() * 256);
+        let blueChannel = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${redChannel}, ${greenChannel}, ${blueChannel})`;
+        let currentOpacity = parseFloat(window.getComputedStyle(e.target).opacity);
+        if (currentOpacity < 1.0) {
+            e.target.style.opacity = currentOpacity + 0.1;
+        }
+    }
 }
 
 gridContainer.addEventListener("mouseover", changeColour);
